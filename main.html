@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>占い総合</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        <script src="back.js"></script>
+  </head>
+  <body>
+    <div id="ap1">
+      <br>
+      <br class="que">
+      <p class="animate__animated animate__fadeInDown" id="que">
+      あなたの生年月日を入力してください。
+      </p>
+      <!-- <h1 class="animate__animated animate__rubberBand">An animated element</h1> -->
+      <!-- <p>{{ year }}</p>
+      <p>{{ month }}</p>
+      <p>{{ day }}</p>
+      <p>{{ stamath }}</p>
+      <p>{{ birmath }}</p> -->
+      <select name=”year” v-model="year" style="width:90px" v-on:change="show = false">
+        <option  v-for="year in nyear - 1920">{{ 1920 + year }}</option>
+      </select>年
+      <select name=”month” v-model="month" v-on:change="show = false">
+        <option  v-for="month in 12">{{ month }}</option>
+      </select>月
+      <select name=”day” v-model="day" v-on:change="show = false">
+        <option  v-for="day in daymath">{{ day }}</option>
+      </select>日
+      <br>
+      <br>
+      <button v-on:click="show = true" class="dbt">表示する</button>
+      <br>
+      <br>
+      <table border="1" v-for="result in animals" v-if="result.val==animath && show" class="animate__animated animate__zoomIn">
+      <transition>
+          <tbody>
+            <tr>
+              <td colspan="2" class="bg2">
+              {{year}}年{{month}}月{{day}}日生まれ
+              </td>
+            </tr>
+            <tr>
+              <td class="bg2">
+                星座
+              </td>
+              <td class="bg">
+                {{ stamath }}
+              </td>
+            </tr>
+            <tr>
+              <td class="bg2">
+                色
+              </td>
+              <td v-for="color in colors" v-if="color.val==colmath" class="bg">
+                {{ color.color }}
+              </td>
+            </tr>
+            <tr>
+              <td class="bg2">
+                あなたの動物
+              </td>
+              <td class="bg">
+                {{ result.type }}
+              </td>
+            </tr>
+            <tr>
+              <td class="bg2">
+                あなたのグッドパートナー
+              </td>
+              <td v-for="good in animals" v-if="good.val==result.good" class="bg">
+                {{ good.type }}
+              </td>
+            </tr>
+            <tr>
+              <td class="bg2">
+                あなたのバッドパートナー
+              </td>
+              <td v-for="bad in animals" v-if="bad.val==result.bad" class="bg">
+                {{ bad.type }}
+              </td>
+            </tr>
+            <tr>
+              <td class="bg2">
+                生年月日占い
+              </td>
+              <td v-for="birth in births" v-if="birth.val==birmath" class="bg">
+                {{ birth.type }}<br>
+                <font size="3">{{ birth.dep }}</font>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </transition>
+      <br>
+<!--
+      <input type="text">
+      <input type="submit" value="add">
+    </div>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>
+            title
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <iframe width=80%>
+            iframe
+          </iframe>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td align="center" colspan="2">
+            <input type="text">
+            <input type="button" value="検索">
+          </td>
+        </tr>
+        <tr>
+          <td width=60%>
+            portforio others
+          </td>
+          <td> -->
+            <!-- <a class="twitter-timeline" data-width="250" data-height="500" data-theme="light" href="https://twitter.com/ecofish?ref_src=twsrc%5Etfw">Tweets by ecofish</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            <!-- twitter
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="ap2">
+      税抜{{mes3}}円
+      <input type="text" v-on:input="pricenum" v-bind:value="price">
+      <p>税込{{price}}円</p>
+    </div>-->
+    <!-- <h1 id="ap2">
+    </h1> -->
+    <!-- <canvas data-processing-sources="app.pde"></canvas> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    <script src="vue.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
